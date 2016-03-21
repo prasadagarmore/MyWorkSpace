@@ -25,7 +25,6 @@ def read_blogs(request):
     result = dict()
     result['start'] = start
     result['length'] = length
-    result['total'] = documents.count()
     result['blogs'] = [{'title': doc.blog_title, 'blog_id': doc.id} for doc in documents]  # not returning trimmed text
     return HttpResponse(json.dumps(result))
 
